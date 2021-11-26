@@ -1,9 +1,9 @@
 package org.github.ebramirez;
 
-import io.quarkus.test.junit.NativeImageTest;
+import io.quarkus.test.junit.QuarkusIntegrationTest;
 
-@NativeImageTest
-public class NativeReactiveGreetingResourceIT extends ReactiveGreetingResourceTest {
+@QuarkusIntegrationTest
+public class NativeReactiveGreetingResourceIT extends JinqLinesResourceTest {
 
     // Execute the same tests but in native mode.
 }
