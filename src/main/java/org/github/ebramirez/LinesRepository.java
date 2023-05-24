@@ -1,9 +1,9 @@
 package org.github.ebramirez;
 
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
-import javax.persistence.EntityManager;
+import jakarta.annotation.PostConstruct;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
+import jakarta.persistence.EntityManager;
 
 import org.jinq.jpa.JPAJinqStream;
 import org.jinq.jpa.JinqJPAStreamProvider;

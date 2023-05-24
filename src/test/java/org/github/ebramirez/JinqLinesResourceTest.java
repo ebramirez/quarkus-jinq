@@ -21,7 +21,7 @@ class JinqLinesResourceTest {
                 .statusCode( 204 );
 
         Lines newLine = given().when()
-                .get( "1" )
+                .get( "/1")
                 .then()
                 .statusCode( 200 )
                 .extract()
