@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'io.quarkus'
     id 'com.github.ben-manes.versions' version '0.51.0'
+    id 'maven-publish'
 }
 
 repositories {
@@ -14,7 +15,7 @@ dependencies {
     implementation 'io.quarkus:quarkus-hibernate-orm'
     implementation 'io.quarkus:quarkus-hibernate-orm-panache'
     implementation 'io.quarkus:quarkus-resteasy'
-    implementation 'io.quarkus:quarkus-jdbc-postgresql'
+    implementation 'io.quarkus:quarkus-jdbc-h2'
     implementation 'io.quarkus:quarkus-arc'
     implementation 'io.quarkus:quarkus-resteasy-jackson'
     implementation 'org.jinq:jinq-jpa:2.0.2'
@@ -49,4 +50,23 @@ quarkus {
 
 test {
     systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
+}
+
+tasks.withType(GenerateModuleMetadata).configureEach {
+    suppressedValidationErrors.add('enforced-platform')
+}
+
+publishing {
+    publications {
+        customLibrary(MavenPublication) {
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            name = 'sampleRepo'
+            url = layout.buildDirectory.dir("repo")
+        }
+    }
 }

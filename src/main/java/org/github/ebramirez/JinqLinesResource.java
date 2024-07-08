@@ -17,9 +17,6 @@ import io.quarkus.runtime.annotations.RegisterForReflection;
 
 @Path( "/lines" )
 @ApplicationScoped
-@RegisterForReflection( lambdaCapturingTypes = "org.github.ebramirez.JinqLinesResource", targets = { JinqLinesResource.class,
-        com.user00.thunk.SerializedLambda.class, SerializedLambda.class, JPAJinqStream.class, Number.class, Long.class,
-        String.class } )
 public class JinqLinesResource implements Serializable {
 
     private static final long serialVersionUID = 3296098878474315412L;
