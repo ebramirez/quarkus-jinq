@@ -14,7 +14,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <quarkus.platform.artifact-id>quarkus-bom</quarkus.platform.artifact-id>
     <quarkus.platform.group-id>io.quarkus.platform</quarkus.platform.group-id>
-    <quarkus.platform.version>3.12.1</quarkus.platform.version>
+    <quarkus.platform.version>3.15.1</quarkus.platform.version>
     <skipITs>true</skipITs>
     <surefire-plugin.version>3.2.5</surefire-plugin.version>
   </properties>
@@ -44,7 +44,7 @@
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-jdbc-h2</artifactId>
+      <artifactId>quarkus-jdbc-postgresql</artifactId>
     </dependency>
     <dependency>
       <groupId>io.quarkus</groupId>
@@ -72,12 +72,7 @@
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
-      <version>3.25.3</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-test-h2</artifactId>
+      <version>3.26.3</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -115,6 +110,7 @@
           <systemPropertyVariables>
             <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
             <maven.home>${maven.home}</maven.home>
+            <maven.settings>${session.request.userSettingsFile.path}</maven.settings>
           </systemPropertyVariables>
         </configuration>
       </plugin>

@@ -1,0 +1,8 @@
+{
+    "java.test.config": [
+        {
+            "name": "quarkusConfiguration",
+            "vmargs": [ "-Djava.util.logging.manager=org.jboss.logmanager.LogManager -Dmaven.home=/home/eramirez/.sdkman/candidates/maven/current/" ]
+        }
+    ]
+}
